@@ -1,3 +1,37 @@
+# Powershell Examples
+[Sample Scripts Documentation](https://docs.microsoft.com/en-us/powershell/scripting/samples/sample-scripts-for-administration?view=powershell-7.2)
+
+## Excute Script 
+```powershell 
+.\<script>
+``` 
+
+## Output
+```powershell
+Write-Host "Hello World"
+
+Write-Output "Hello World"
+```
+
+Write-Host outputs data directly to the host and not along the pipeline 
+
+Write-Output has its output continue down the pipeline 
+
+## User input
+```powershell
+$name = Read-Host "What is your name"
+```
+## Password Creation
+Create a password
+```powershell
+$pass = Read-Host "Enter Password" -AsSecureString
+```
+```-AsSecureString``` to avoid displaying to screen and storing securely 
+
+Output the password
+```powershell
+[Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringTOBSTR($pass))
+```
 # Powershell Exercises
 ## Practice Exercise 1: File Operations/Searching/Basic PowerShell Operators
 
